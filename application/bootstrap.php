@@ -65,17 +65,17 @@ Kohana::$config->attach(new Kohana_Config_File);
  * Enable modules. Modules are referenced by a relative or absolute path.
  */
 Kohana::modules(array(
-        // 'auth'       => MODPATH.'auth',       // Basic authentication
-        // 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
-        // 'database'   => MODPATH.'database',   // Database access
-        // 'image'      => MODPATH.'image',      // Image manipulation
-        // 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
-        // 'pagination' => MODPATH.'pagination', // Paging of results
-        // 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
-        'sprig'     => MODPATH.'sprig',
-        'dbforge'   => MODPATH.'dbforge',
-        'migration' => MODPATH.'migration',
-        'smarty' => MODPATH.'smarty'
+	'auth'       => MODPATH.'auth',       // Basic authentication
+	'codebench'  => MODPATH.'codebench',  // Benchmarking tool
+	'database'   => MODPATH.'database',   // Database access
+// 'image'      => MODPATH.'image',      // Image manipulation
+	'orm'        => MODPATH.'orm',        // Object Relationship Mapping
+	'pagination' => MODPATH.'pagination', // Paging of results
+	'userguide'  => MODPATH.'userguide',  // User guide and API documentation
+	'sprig'     => MODPATH.'sprig',
+	'dbforge'   => MODPATH.'dbforge',
+	'migration' => MODPATH.'migration',
+	'smarty' => MODPATH.'smarty'
 ));
 
 /**
@@ -83,7 +83,7 @@ Kohana::modules(array(
  * defaults for the URI.
  */
 Route::set('default', '(<controller>(/<action>(/<id>)))')
-        ->defaults(array(
+->defaults(array(
         'controller' => 'welcome',
         'action'     => 'index',
 ));
