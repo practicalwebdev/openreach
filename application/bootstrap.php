@@ -65,30 +65,34 @@ Kohana::$config->attach(new Kohana_Config_File);
  * Enable modules. Modules are referenced by a relative or absolute path.
  */
 Kohana::modules(array(
-	// 'auth'       => MODPATH.'auth',       // Basic authentication
-	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
-	// 'database'   => MODPATH.'database',   // Database access
-	// 'image'      => MODPATH.'image',      // Image manipulation
-	// 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
-	// 'pagination' => MODPATH.'pagination', // Paging of results
-	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
-	));
+        // 'auth'       => MODPATH.'auth',       // Basic authentication
+        // 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
+        // 'database'   => MODPATH.'database',   // Database access
+        // 'image'      => MODPATH.'image',      // Image manipulation
+        // 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
+        // 'pagination' => MODPATH.'pagination', // Paging of results
+        // 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
+        'sprig'     => MODPATH.'sprig',
+        'dbforge'   => MODPATH.'dbforge',
+        'migration' => MODPATH.'migration',
+        'smarty' => MODPATH.'smarty'
+));
 
 /**
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
  */
 Route::set('default', '(<controller>(/<action>(/<id>)))')
-	->defaults(array(
-		'controller' => 'welcome',
-		'action'     => 'index',
-	));
+        ->defaults(array(
+        'controller' => 'welcome',
+        'action'     => 'index',
+));
 
 /**
  * Execute the main request. A source of the URI can be passed, eg: $_SERVER['PATH_INFO'].
  * If no source is specified, the URI will be automatically detected.
  */
 echo Request::instance()
-	->execute()
-	->send_headers()
-	->response;
+->execute()
+->send_headers()
+->response;
