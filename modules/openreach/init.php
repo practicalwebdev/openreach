@@ -3,7 +3,7 @@
 // Static file serving (CSS, JS, images)
 Route::set('files', 'file(/<file>)', array('file' => '.+'))
 	->defaults(array(
-		'controller' => 'openreach',
+		'controller' => 'static',
 		'action'     => 'file',
 		'file'       => NULL,
 	));
