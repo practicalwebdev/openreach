@@ -5,11 +5,11 @@
  * @package    Openreach
  * @author     Practicalwebdev
  */
-class Controller_Website extends Controller_Template {
+class Controller_Website extends Controller_Smarty {
 
 	protected $files;
 
-	public $template = 'openreach/template';
+	public $template = 'smarty:openreach/template';
 
 	public function before()
 	{
@@ -19,19 +19,25 @@ class Controller_Website extends Controller_Template {
 
 	public function action_index(){
 		$this->template->title = "Hello world";
+		$this->template->content = "Tartalom";
 	}
 
 	public function after(){
 		// Add styles
 		$this->template->styles = array(
-		$files->uri(array('file' => 'css/screen.css')) => 'screen',
-		$files->uri(array('file' => 'css/kodoc.css'))  => 'screen',
+		$this->files->uri(array('file' => 'css/reset.css')) => 'screen',
+		$this->files->uri(array('file' => 'css/text.css')) => 'screen',
+		$this->files->uri(array('file' => 'css/grid.css')) => 'screen',
+		$this->files->uri(array('file' => 'css/layout.css')) => 'screen',
+		$this->files->uri(array('file' => 'css/nav.css')) => 'screen',
 		);
 
 		// Add scripts
 		$this->template->scripts = array(
-		$files->uri(array('file' => 'js/jquery.js')),
-		$files->uri(array('file' => 'js/openreach.js')),
+		$this->files->uri(array('file' => 'js/jquery-1.3.2.js')),
+		$this->files->uri(array('file' => 'js/jquery-fluid16.js')),
+		$this->files->uri(array('file' => 'js/jquery-ui.js')),
+		// $files->uri(array('file' => 'js/openreach.js')),
 		);
 		parent::after();
 	}
