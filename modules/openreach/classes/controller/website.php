@@ -15,12 +15,7 @@ class Controller_Website extends Controller_Smarty {
 	{
 		$this->files = Route::get('files');
 		parent::before();
-	}
-
-	public function action_index(){
-		$this->template->title = "Hello world";
-		$this->template->content = "Tartalom";
-	}
+	}	
 
 	public function after(){
 		// Add styles

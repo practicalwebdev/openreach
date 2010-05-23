@@ -7,8 +7,7 @@
  */
 class Controller_Static extends Controller {
 
-	public function action_file()
-	{
+	public function action_file() {
 		// Get the file path from the request
 		$file = $this->request->param('file');
 
@@ -18,13 +17,11 @@ class Controller_Static extends Controller {
 		// Remove the extension from the filename
 		$file = substr($file, 0, -(strlen($ext) + 1));
 
-		if ($file = Kohana::find_file('files', $file, $ext))
-		{
+		if ($file = Kohana::find_file('files', $file, $ext)) {
 			// Send the file content as the response
 			$this->request->response = file_get_contents($file);
 		}
-		else
-		{
+		else {
 			// Return a 404 status
 			$this->request->status = 404;
 		}
