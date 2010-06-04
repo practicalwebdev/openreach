@@ -8,11 +8,11 @@
 <title>{$title}</title>
 
 {foreach from=$styles key=style item=media}
-	<link rel="stylesheet" href="{$style}" type="text/css" />
+	<link rel="stylesheet" href="/{$style}" type="text/css" />
 {/foreach}
 
 {foreach from=$scripts item=script}
-	<script type="text/javascript" src="{$script}"></script>
+	<script type="text/javascript" src="/{$script}"></script>
 {/foreach}
 
 </head>
